@@ -8,28 +8,28 @@ import { HeroSection } from "@/features/portfolio/sections/hero-section";
 import { TestimonialsSection } from "@/features/portfolio/sections/testimonials-section";
 
 const PortfolioShaderBackground = lazy(() =>
-	import("@/features/portfolio/shader-background").then((m) => ({
-		default: m.PortfolioShaderBackground,
-	})),
+  import("@/features/portfolio/animated-background").then((m) => ({
+    default: m.AnimatedBackground,
+  })),
 );
 
 export function PortfolioPage() {
-	return (
-		<div className="min-h-screen" style={{ background: "var(--c-bg)" }}>
-			<Suspense fallback={null}>
-				<PortfolioShaderBackground />
-			</Suspense>
-			<div className="page-content">
-				<main>
-					<HeroSection />
-					<AboutSection />
-					<ExpertiseSection />
-					<ExperienceSection />
-					<TestimonialsSection />
-					<ContactSectionWrapper />
-				</main>
-				<Footer />
-			</div>
-		</div>
-	);
+  return (
+    <div className="min-h-screen" style={{ background: "var(--c-bg)" }}>
+      <Suspense fallback={null}>
+        <PortfolioShaderBackground />
+      </Suspense>
+      <div className="page-content">
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <ExpertiseSection />
+          <ExperienceSection />
+          <TestimonialsSection />
+          <ContactSectionWrapper />
+        </main>
+        <Footer />
+      </div>
+    </div>
+  );
 }
