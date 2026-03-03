@@ -509,7 +509,7 @@ body {
 	}
 }
 
-/* Reveal panel: slides up from below on hover, covers full card */
+/* Reveal panel: fades in on hover, covers full card */
 .about-card-reveal {
 	position: absolute;
 	inset: 0;
@@ -521,14 +521,14 @@ body {
 		transparent 0%,
 		var(--c-surface) 30%
 	);
-	transform: translateY(100%);
-	transition: transform 0.65s var(--ease-out-expo);
+	opacity: 0;
+	transition: opacity 0.55s var(--ease-out-expo);
 	z-index: 1;
 }
 
 @media (hover: hover) {
 	.about-card:hover .about-card-reveal {
-		transform: translateY(0);
+		opacity: 1;
 	}
 }
 
