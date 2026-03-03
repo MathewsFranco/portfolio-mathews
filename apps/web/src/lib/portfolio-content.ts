@@ -83,7 +83,7 @@ export const aboutContent = {
   poker:
     "Before I wrote my first line of production code, I spent years at the poker table — reading patterns, calculating odds in real time, staying composed when the stakes were high. That analytical instinct didn't leave when I switched careers. It became the foundation of how I approach complex systems: methodically, calmly, always with the bigger picture in mind.",
   beyond:
-    "Away from the screen, I'm chasing the perfect coffee extraction, sending bouldering routes, or deep into a strategy game that demands the kind of thinking no algorithm can replicate. I find patterns everywhere — in art, in movement, in the way a good espresso pulls.",
+    "Away from the screen, I'm dialling in the perfect filter brew, sending bouldering routes, or deep in a strategy game that demands the kind of thinking no algorithm can replicate. I find patterns everywhere — in art, in movement, in the way a good pour-over opens up as it cools.",
   closing: "Let's grab a coffee and see where the conversation goes.",
 };
 
