@@ -22,9 +22,9 @@ export function PortfolioPage() {
       <div className="page-content">
         <main>
           <HeroSection />
-          <AboutSection />
           <ExpertiseSection />
           <ExperienceSection />
+          <AboutSection />
           <TestimonialsSection />
           <ContactSectionWrapper />
         </main>
