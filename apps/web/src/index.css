@@ -617,6 +617,36 @@ body {
 	}
 }
 
+@media (hover: none) {
+	.about-card {
+		cursor: pointer;
+	}
+
+	.about-card--active::before {
+		transform: scaleY(1);
+	}
+
+	.about-card--active .about-card-identity {
+		transform: translateY(-2.75rem);
+	}
+
+	.about-card--active .about-card-reveal {
+		opacity: 1;
+	}
+
+	.about-card--active .about-card-icon {
+		color: var(--c-accent);
+	}
+
+	.about-card--active .about-card-title {
+		color: var(--c-muted);
+	}
+
+	.about-card--active .about-card-pulse {
+		opacity: 0;
+	}
+}
+
 /* ─── Quote ─── */
 .blockquote-accent {
 	border-left: 2px solid var(--c-accent);

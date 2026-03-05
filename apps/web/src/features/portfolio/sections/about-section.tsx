@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Code2, Spade, Coffee } from "lucide-react";
 import { fade } from "@/features/portfolio/animations";
@@ -26,6 +27,8 @@ const cards = [
 ] as const;
 
 export function AboutSection() {
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+
   return (
     <section id="about" className="section">
       <div className="shell">
@@ -35,7 +38,8 @@ export function AboutSection() {
           {cards.map(({ icon: Icon, kicker, title, body }, i) => (
             <motion.div
               key={title}
-              className="about-card"
+              className={`about-card${activeCard === i ? " about-card--active" : ""}`}
+              onClick={() => setActiveCard(activeCard === i ? null : i)}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
