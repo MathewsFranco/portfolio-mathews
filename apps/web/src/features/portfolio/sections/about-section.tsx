@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Code2, Spade, Coffee } from "lucide-react";
+import { useWebHaptics } from "web-haptics/react";
 import { fade } from "@/features/portfolio/animations";
 import { SectionHeader } from "@/features/portfolio/components/section-header";
 import { aboutContent } from "@/lib/portfolio-content";
@@ -28,6 +29,17 @@ const cards = [
 
 export function AboutSection() {
   const [activeCard, setActiveCard] = useState<number | null>(null);
+  const { trigger } = useWebHaptics({ debug: import.meta.env.DEV });
+
+  function handleCardClick(i: number) {
+    const isOpening = activeCard !== i;
+    if (isOpening) {
+      trigger([{ duration: 15 }, { delay: 40, duration: 30, intensity: 0.9 }]);
+    } else {
+      trigger([{ duration: 10 }]);
+    }
+    setActiveCard(isOpening ? i : null);
+  }
 
   return (
     <section id="about" className="section">
@@ -39,7 +51,7 @@ export function AboutSection() {
             <motion.div
               key={title}
               className={`about-card${activeCard === i ? " about-card--active" : ""}`}
-              onClick={() => setActiveCard(activeCard === i ? null : i)}
+              onClick={() => handleCardClick(i)}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}

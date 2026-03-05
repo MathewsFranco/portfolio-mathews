@@ -16,6 +16,8 @@ import {
   siTypescript,
   siVite,
 } from "simple-icons";
+import type { HapticInput } from "web-haptics";
+import { useWebHaptics } from "web-haptics/react";
 import { easeOutExpo } from "@/features/portfolio/animations";
 import { SectionHeader } from "@/features/portfolio/components/section-header";
 import { techStack } from "@/lib/portfolio-content";
@@ -90,7 +92,16 @@ function TechFallbackIcon({ name, size }: { name: string; size: number }) {
   );
 }
 
+const weightHaptics: Record<number, HapticInput> = {
+  5: [{ duration: 20, intensity: 1 }, { delay: 25, duration: 40, intensity: 0.9 }],
+  4: [{ duration: 20, intensity: 0.8 }],
+  3: [{ duration: 15, intensity: 0.5 }],
+  2: [{ duration: 10, intensity: 0.3 }],
+};
+
 export function ExperienceSection() {
+  const { trigger } = useWebHaptics({ debug: import.meta.env.DEV });
+
   return (
     <section id="experience" className="section">
       <div className="shell">
@@ -119,9 +130,11 @@ export function ExperienceSection() {
                 className="tech-cell"
                 data-weight={item.weight}
                 variants={cellVariants}
+                onClick={() => trigger(weightHaptics[item.weight])}
                 style={{
                   gridColumn: `span ${COL_SPAN[item.weight]}`,
                   gridRow: `span ${ROW_SPAN[item.weight]}`,
+                  cursor: "pointer",
                 }}
               >
                 <span className="tech-cell-category">{item.category}</span>
