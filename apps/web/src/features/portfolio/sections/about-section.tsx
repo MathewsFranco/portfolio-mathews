@@ -62,7 +62,7 @@ export function AboutSection() {
 
               <div className="about-card-identity">
                 <div className="about-card-icon">
-                  <Icon size={28} strokeWidth={1.25} />
+                  <Icon size={28} strokeWidth={2} />
                 </div>
                 <p className="about-card-kicker">{kicker}</p>
                 <h3 className="about-card-title">{title}</h3>
@@ -72,7 +72,7 @@ export function AboutSection() {
                 <p>{body}</p>
               </div>
 
-              <div className="about-card-pulse" />
+              <span className="about-card-beacon" aria-hidden="true" />
             </motion.div>
           ))}
         </div>

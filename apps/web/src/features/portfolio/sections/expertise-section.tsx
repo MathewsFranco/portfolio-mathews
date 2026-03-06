@@ -37,10 +37,10 @@ export function ExpertiseSection() {
               }}
             >
               <div className="flex items-start gap-6 sm:gap-10" style={{ position: "relative", zIndex: 1 }}>
-                <span className="expertise-ghost-index">
+                <span className="expertise-icon-box">
                   {(() => {
                     const Icon = domainIcons[domain.title];
-                    return Icon ? <Icon strokeWidth={1} /> : null;
+                    return Icon ? <Icon size={28} strokeWidth={2} /> : null;
                   })()}
                 </span>
                 <div className="min-w-0 flex-1">
