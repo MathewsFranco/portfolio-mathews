@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { AboutSection } from "@/features/portfolio/sections/about-section";
 import { ContactSectionWrapper } from "@/features/portfolio/sections/contact-section-wrapper";
-import { ExperienceSection } from "@/features/portfolio/sections/experience-section";
+import { StackSection } from "@/features/portfolio/sections/stack-section";
 import { ExpertiseSection } from "@/features/portfolio/sections/expertise-section";
 import { Footer } from "@/features/portfolio/sections/footer";
 import { HeroSection } from "@/features/portfolio/sections/hero-section";
@@ -23,7 +23,7 @@ export function PortfolioPage() {
         <main>
           <HeroSection />
           <ExpertiseSection />
-          <ExperienceSection />
+          <StackSection />
           <AboutSection />
           <TestimonialsSection />
           <ContactSectionWrapper />

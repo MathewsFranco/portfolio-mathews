@@ -99,7 +99,7 @@ const weightHaptics: Record<number, HapticInput> = {
   2: [{ duration: 10, intensity: 0.3 }],
 };
 
-export function ExperienceSection() {
+export function StackSection() {
   const { trigger } = useWebHaptics({ debug: import.meta.env.DEV });
 
   return (
