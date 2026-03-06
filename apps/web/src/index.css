@@ -469,26 +469,6 @@ body {
 	justify-content: center;
 }
 
-/* Left accent bar — same language as expertise strips & contact rows */
-.about-card::before {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	width: 2px;
-	background: var(--c-accent);
-	transform: scaleY(0);
-	transform-origin: top;
-	transition: transform 0.55s var(--ease-out-expo);
-	z-index: 2;
-}
-
-@media (hover: hover) {
-	.about-card:hover::before {
-		transform: scaleY(1);
-	}
-}
 
 /* Identity group: icon + kicker + title — shifts up to make room for the reveal */
 .about-card-identity {
@@ -541,7 +521,7 @@ body {
 }
 
 .about-card-icon {
-	color: var(--c-fg-ghost);
+	color: var(--c-muted);
 	transition: color 0.5s var(--ease-out-expo);
 }
 
@@ -645,11 +625,7 @@ body {
 		cursor: pointer;
 	}
 
-	.about-card--active::before {
-		transform: scaleY(1);
-	}
-
-	.about-card--active .about-card-identity {
+.about-card--active .about-card-identity {
 		transform: translateY(-2.75rem);
 	}
 
