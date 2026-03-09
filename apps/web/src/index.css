@@ -562,11 +562,11 @@ body {
 	bottom: 1.5rem;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 5px;
-	height: 5px;
+	width: 9px;
+	height: 9px;
 	border-radius: 50%;
 	background: var(--c-accent);
-	box-shadow: 0 0 6px var(--c-accent);
+	box-shadow: 0 0 8px var(--c-accent);
 	z-index: 2;
 	transition: opacity 0.4s var(--ease-out-expo);
 }
@@ -577,8 +577,8 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 28px;
-	height: 28px;
+	width: 52px;
+	height: 52px;
 	border-radius: 50%;
 	border: 1px solid var(--c-accent);
 	transform: translate(-50%, -50%) scale(0.2);
